@@ -12,3 +12,22 @@
 	font-size:.8em;
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+/*
+css rule with pseudoselector
+a:hover {
+    color:blue;
+}
+*/
+
+/*
+Child element within another element
+ul>li{
+	font-size:20px;
+}
+*/
+>>>>>>> 7e5675a45a3334cab3b2abe7193b2d9e791d1eb8

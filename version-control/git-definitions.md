@@ -10,3 +10,4 @@ version control is a system that keep track record and tracks your files. It is 
 a commit is basically a save point. A good commit message is one that describes the changes. 
 * What is a merge conflict?
 A merge conflict is when versions of a file is different in different branches. It prevents merging branches until the issue is solved.
+*****************
