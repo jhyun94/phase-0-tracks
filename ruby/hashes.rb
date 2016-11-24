@@ -4,6 +4,9 @@ get input
 convert needed values
 store input as values for the hash
 output the hash
+ask for update
+convert value and update
+print output
 
 	
 =end
@@ -65,11 +68,15 @@ case input
 		print "\n"
 	when "age"
 		print "Enter new value: "
-		application[:age]=gets.chomp
+		age=gets.chomp
+		age=convert(age)
+		application[:age]=age
 		print "\n"
 	when "num_of_children"
 		print "Enter new value: "
-		application[:age]=gets.chomp
+		children=gets.chomp
+		children=convert(children)
+		application[:num_of_children]=children
 		print "\n"
 	when "decor_theme"
 		print "Enter new value: "
