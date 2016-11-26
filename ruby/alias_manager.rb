@@ -46,8 +46,17 @@ def alias_maker(name)
 	return name
 end
 
-cover_name=alias_maker("Felicia Torres")
+
+puts "Enter a name. Press quit when done."
+cover_name=gets.chomp
+
+until cover_name =="quit"
+cover_name=alias_maker(cover_name)
 cover_name=capitalize(cover_name)
 puts cover_name
+print "\n"
+cover_name=gets.chomp
+end
+
 
 
