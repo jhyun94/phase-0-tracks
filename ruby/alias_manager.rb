@@ -46,17 +46,39 @@ def alias_maker(name)
 	return name
 end
 
+agents={
+	names: {
+		real: [],
+		cover: []
+	},
+}
 
 puts "Enter a name. Press quit when done."
-cover_name=gets.chomp
+real_name=gets.chomp
 
-until cover_name =="quit"
-cover_name=alias_maker(cover_name)
+until real_name =="quit"
+cover_name=alias_maker(real_name)
 cover_name=capitalize(cover_name)
+agents[:names][:real].push(real_name)
+agents[:names][:cover].push(cover_name)
 puts cover_name
 print "\n"
-cover_name=gets.chomp
+real_name=gets.chomp
 end
+
+length=agents[:names][:cover].length
+index=0
+while index<length
+	puts "#{agents[:names][:cover][index]} is actually #{agents[:names][:real][index]}!"
+	index+=1
+end
+
+
+
+
+
+
+
 
 
 
