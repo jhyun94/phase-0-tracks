@@ -44,14 +44,16 @@ class Ninja
     puts "Kill #{nam}"
   end
 
-  def self.create_ninja(int)
-    int.times do |num|
-      #ninja = "ninja" + num.to_s
-      ninja = Ninja.new
-      $ninja_array << ninja
-    end
-  end
 end
+
+
+
+#DRIVER CODE
+ninja_array =[]
+
+
+#iterate through array of instances
+
 
 def all_methods(nin)
   nin.stealth_mode
@@ -59,21 +61,14 @@ def all_methods(nin)
   nin.assinate("Donald Duck")
 end
 
-#DRIVER CODE
-$ninja_array =[]
+50.times do 
+  ninja_array<< Ninja.new
+end
 
-Ninja.create_ninja(50)
-
-
-p $ninja_array
-p $ninja_array.length
-
-#iterate through array of instances
-$ninja_array.each do |instance|
+ninja_array.each do |instance|
   print_allmethods = all_methods(instance)
   puts print_allmethods
 end
-
 
 
 # pup = Puppy.new
@@ -87,4 +82,3 @@ end
 # puts pup.dog_years(15)
 
 # pup.play_dead
-
