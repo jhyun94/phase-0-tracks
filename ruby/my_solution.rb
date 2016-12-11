@@ -4,26 +4,27 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
-require_relative 'state_data'
+# adds in code from a file relative to this one. require needs the code w/in same file
+
+require_relative 'state_data' 
 
 class VirusPredictor
-
+  # runs each time a new class is created
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+  # runs methods w/ the parameters
+  
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
-
-  def predicted_deaths(population_density, population, state)
+  # displays a state's number of deaths in outbreak
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -40,8 +41,8 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
-  def speed_of_spread(population_density, state) #in months
+  # determines speed of spread
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -70,14 +71,22 @@ end
  # initialize VirusPredictor for each state
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+STATE_DATA.each do |state_name, value|
+  state = VirusPredictor.new(state_name, value[:population_density], value[:population])
+  state.virus_effects
+end
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
+=begin
+What are the differences between the two different hash syntaxes shown in the state_data file?
+one uses a hash rocket and the other uses a symbol
+What does require_relative do? How is it different from require?
+  require relative can use data within same directory, while requre uses data from same file.
+What are some ways to iterate through a hash?
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+What concept did you most solidify in this challenge?
+  
+
+  
+=end
