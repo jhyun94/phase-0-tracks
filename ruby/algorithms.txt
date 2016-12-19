@@ -1,0 +1,13 @@
+Elevator
+Start with the lowest number and work your way up
+	if the number is the floor you need to get off then press the button
+	else keep going up 
+
+
+Common Task Should I eat?
+Live through daily life
+	until stomach growls
+		if there is time then grab some food to eat
+		else continue to work until free time
+	If stomach does not growl then keep doing work until stomach growls.
+

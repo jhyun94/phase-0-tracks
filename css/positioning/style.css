@@ -1,5 +1,19 @@
-img.octo {
+
+#octo {
+	position:relative;
 	display:block;
-	margin-right:auto;
-	margin-left:auto;
+	margin:0 auto;
+	padding-top:5px;
+	z-index:-1;
+}
+
+#glasses {
+	position:relative;
+	left:290px;
+	top:170px;
+}
+
+#hat {
+	position:relative;
+	left:500px;
 }
